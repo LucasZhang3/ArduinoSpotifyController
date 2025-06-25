@@ -7,7 +7,6 @@
 
 This project uses an **Arduino Mega**, a **16x2 LCD display**, and a **joystick module** to create a live Spotify playback info display. The Arduino shows the current song name, artist, and playback progress, allowing you to scroll through long text using the joystick. Data is fetched from the Spotify Web API by a Python script and sent via serial to the Arduino.
 
----
 
 ## Requirements
 
@@ -28,8 +27,6 @@ This project uses an **Arduino Mega**, a **16x2 LCD display**, and a **joystick 
   ```bash
   pip install pyserial spotipy
   ```
-
----
 
 ## How to Use
 
