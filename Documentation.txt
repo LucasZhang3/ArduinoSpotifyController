@@ -1,0 +1,56 @@
+Hardware Components:
+--------------------
+1. Arduino Uno (or compatible board)
+2. 16x2 LCD Display (HD44780 compatible)
+3. Joystick module
+4. Breadboard & jumper wires
+5. USB cable (for Arduino-PC communication)
+
+LCD Wiring:
+-----------
+The LCD is connected using the following pin mapping:
+
+| LCD Pin | Arduino Pin |
+|---------|-------------|
+| RS      | D7          |
+| E       | D8          |
+| D4      | D9          |
+| D5      | D10         |
+| D6      | D11         |
+| D7      | D12         |
+
+* Power the LCD with 5V and GND from Arduino.
+* Use a 10k potentiometer (or fixed resistor) for contrast control (connected to V0 pin of LCD).
+
+Joystick Wiring:
+----------------
+The joystick module should be connected as follows:
+
+| Joystick Pin | Arduino Pin |
+|--------------|-------------|
+| VCC          | 5V          |
+| GND          | GND         |
+| VRx (X-axis) | A0          |
+| SW (Button)  | D2          |
+
+* No external pull-down resistors needed — internal pull-up is used for the button.
+
+Serial Communication:
+---------------------
+- Arduino uses `Serial.begin(9600)` to communicate with the Python script running on your PC.
+- Data is sent from Python to Arduino in a single string containing two 48-character lines (total 96 characters).
+- Each update includes:
+  - Line 1: Song Title
+  - Line 2: Artist - CurrentTime / TotalTime
+
+Power Supply:
+-------------
+- Arduino is powered via USB from the PC.
+- All components (LCD, Joystick) are powered from Arduino’s 5V output.
+
+Physical Layout Tips:
+---------------------
+- Use a breadboard for testing and prototyping.
+- Consider mounting the joystick and LCD to a small panel or case for a clean final product.
+- Optionally, add an enclosure with cutouts for display and joystick for portability and durability.
+
